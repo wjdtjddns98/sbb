@@ -1,12 +1,12 @@
-package com.mysite.sbb.answer.user;
+package com.mysite.sbb.user;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
 @Getter
 @Setter
+@Entity
 public class SiteUser {
 
     @Id
@@ -18,5 +18,6 @@ public class SiteUser {
 
     private String password;
 
+    @Column(unique = true)
     private String email;
 }

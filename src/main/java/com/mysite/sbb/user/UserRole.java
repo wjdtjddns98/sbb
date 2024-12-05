@@ -1,4 +1,15 @@
 package com.mysite.sbb.user;
 
-public class UserRole {
+import lombok.Getter;
+
+@Getter
+public enum UserRole {
+    ADMIN("ROLE_ADMIN"),
+    USER("ROLE_USER");
+
+    UserRole(String role) {
+        this.role = role;
+    }
+
+    private String role;
 }

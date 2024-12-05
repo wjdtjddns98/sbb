@@ -1,5 +1,7 @@
-package com.mysite.sbb;
+package com.mysite.sbb.question;
 
+import com.mysite.sbb.answer.Answer;
+import com.mysite.sbb.user.SiteUser;
 import jakarta.persistence.*;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -27,8 +29,17 @@ public class Question {
     @Column(columnDefinition = "TEXT")
     private String content;
 
+    //등록시간
     private LocalDateTime createDate;
+
+    //수정시간
+    private LocalDateTime modifyDate;
 
     @OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE)
     private List<Answer> answerList;
+
+    @ManyToOne
+    private SiteUser author;
+
+    private String Password;
 }
